@@ -1,12 +1,45 @@
+"use client";
+import { motion } from "framer-motion";
+import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
+import {
+  FaCode,
+  FaGlobe,
+  FaCloud,
+  FaRobot,
+  FaShieldAlt,
+  FaMobileAlt,
+  FaHeadset,
+  FaChartLine,
+} from "react-icons/fa";
 export default function Home() {
   return (
     <main className="min-h-screen bg-[#050505] text-white">
       <Navbar />
       {/* Hero */}
       <section className="relative overflow-hidden">
-        <div className="absolute left-0 top-0 h-96 w-96 rounded-full bg-yellow-500/10 blur-3xl"></div>
-        <div className="absolute right-0 top-20 h-96 w-96 rounded-full bg-yellow-400/10 blur-3xl"></div>
+        <motion.div
+  animate={{
+    x: [0, 40, 0],
+    y: [0, 20, 0],
+  }}
+  transition={{
+    duration: 8,
+    repeat: Infinity,
+  }}
+  className="absolute left-0 top-0 h-96 w-96 rounded-full bg-yellow-500/10 blur-3xl"
+/>
+        <motion.div
+  animate={{
+    x: [0, -40, 0],
+    y: [0, -20, 0],
+  }}
+  transition={{
+    duration: 10,
+    repeat: Infinity,
+  }}
+  className="absolute right-0 top-20 h-96 w-96 rounded-full bg-yellow-400/10 blur-3xl"
+/>
 
         <div className="mx-auto max-w-7xl px-6 py-20">
           <div className="grid items-center gap-12 lg:grid-cols-2">
@@ -15,12 +48,17 @@ export default function Home() {
                 SOFTWARE • CLOUD • AI • CONSULTING
               </p>
 
-              <h1 className="text-5xl font-extrabold leading-tight md:text-7xl">
+              <motion.h1
+  initial={{ opacity: 0, y: 50 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 1 }}
+  className="text-5xl font-extrabold leading-tight md:text-7xl"
+>
                 Building
                 <span className="block bg-gradient-to-r from-[#D4AF37] via-[#F5C86B] to-[#FFD700] bg-clip-text text-transparent">
                   Digital Excellence
                 </span>
-              </h1>
+              </motion.h1>
 
               <p className="mt-8 text-lg text-gray-400">
                 We design, develop and scale world-class software solutions,
@@ -72,78 +110,44 @@ export default function Home() {
           </div>
         </div>
       </section>
+     
         {/* Trust Section */}
-{/* Trust & Certifications */}
-<section className="mx-auto max-w-7xl px-6 py-24">
-  <div className="text-center mb-14">
-    <h2 className="text-5xl font-bold">
-      Trusted & <span className="text-[#D4AF37]">Certified</span>
-    </h2>
+     <section className="py-24 bg-[#080808]">
+  <div className="max-w-7xl mx-auto px-6">
 
-    <p className="mt-4 text-gray-400">
-      Recognized by government and industry certification bodies.
-    </p>
-  </div>
+    <div className="text-center mb-16">
+      <h2 className="text-5xl font-bold">
+        Our <span className="text-[#D4AF37]">Impact</span>
+      </h2>
 
-  <div className="grid grid-cols-2 gap-8 md:grid-cols-3 lg:grid-cols-6">
+      <p className="mt-4 text-gray-400">
+        Delivering reliable IT, BPO and Digital Transformation solutions.
+      </p>
+    </div>
 
-    {[
-      { img: "/certifications/msme.png", title: "MSME" },
-      { img: "/certifications/gem.png", title: "GeM" },
-      { img: "/certifications/startup-india.png", title: "Startup India" },
-      { img: "/certifications/gst.png", title: "GST" },
-      { img: "/certifications/iec.png", title: "IEC" },
-      { img: "/certifications/iso.png", title: "ISO" },
-    ].map((item) => (
-      <div
-        key={item.title}
-        className="group rounded-3xl border border-white/10 bg-white/5 p-6 transition-all duration-300 hover:border-[#D4AF37] hover:shadow-[0_0_30px_rgba(212,175,55,0.25)]"
-      >
-        <img
-          src={item.img}
-          alt={item.title}
-          className="mx-auto h-20 object-contain"
-        />
+    <div className="grid md:grid-cols-4 gap-8">
 
-        <h3 className="mt-5 text-center font-semibold text-white group-hover:text-[#D4AF37]">
-          {item.title}
-        </h3>
+      <div className="rounded-2xl border border-white/10 bg-white/5 p-8 text-center">
+        <h3 className="text-5xl font-bold text-[#D4AF37]">20+</h3>
+        <p className="mt-3 text-gray-400">Projects Delivered</p>
       </div>
-    ))}
 
-  </div>
-</section>
-      {/* Trusted By */}
-<section className="mx-auto max-w-7xl px-6 py-24">
-  <div className="text-center mb-14">
-    <h2 className="text-5xl font-bold">
-      Trusted <span className="text-[#D4AF37]">By</span>
-    </h2>
-
-    <p className="mt-4 text-gray-400">
-      Organizations and businesses that trust Do IT Consultancy.
-    </p>
-  </div>
-
-  <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-
-    {[
-      "Government Projects",
-      "Educational Institutes",
-      "Startups",
-      "Small Businesses",
-      "Training Organizations",
-      "Corporate Clients",
-      "IT Companies",
-      "BPO Operations",
-    ].map((client) => (
-      <div
-        key={client}
-        className="rounded-3xl border border-white/10 bg-white/5 p-8 text-center transition-all hover:border-[#D4AF37]"
-      >
-        <h3 className="font-semibold">{client}</h3>
+      <div className="rounded-2xl border border-white/10 bg-white/5 p-8 text-center">
+        <h3 className="text-5xl font-bold text-[#D4AF37]">10+</h3>
+        <p className="mt-3 text-gray-400">Clients Served</p>
       </div>
-    ))}
+
+      <div className="rounded-2xl border border-white/10 bg-white/5 p-8 text-center">
+        <h3 className="text-5xl font-bold text-[#D4AF37]">5+</h3>
+        <p className="mt-3 text-gray-400">Dedicated Team Members</p>
+      </div>
+
+      <div className="rounded-2xl border border-white/10 bg-white/5 p-8 text-center">
+        <h3 className="text-5xl font-bold text-[#D4AF37]">24/7</h3>
+        <p className="mt-3 text-gray-400">Support Available</p>
+      </div>
+
+    </div>
 
   </div>
 </section>
@@ -203,7 +207,43 @@ export default function Home() {
     ))}
   </div>
 </section>
+{/* Trust & Certifications */}
+<section className="py-20 overflow-hidden">
+  <div className="max-w-7xl mx-auto px-6">
 
+    <div className="text-center mb-12">
+      <h2 className="text-5xl font-bold">
+        Trusted & <span className="text-[#D4AF37]">Certified</span>
+      </h2>
+
+      <p className="mt-4 text-gray-400">
+        Recognized by Government of India and Industry Certification Bodies
+      </p>
+    </div>
+
+    <div className="relative overflow-hidden">
+      <div className="flex gap-16 animate-marquee whitespace-nowrap items-center">
+
+        <img src="/certifications/startupindia.png" alt="Startup India" className="h-24 w-auto object-contain" />
+        <img src="/certifications/msme.jpg" alt="MSME" className="h-24 w-auto object-contain" />
+        <img src="/certifications/gst.jfif" alt="GST" className="h-24 w-auto object-contain" />
+        <img src="/certifications/iso.png" alt="ISO" className="h-24 w-auto object-contain" />
+        <img src="/certifications/IMPORT.jpg" alt="IEC" className="h-24 w-auto object-contain" />
+        <img src="/certifications/gem.png" alt="GeM" className="h-24 w-auto object-contain" />
+
+        {/* Duplicate for infinite loop */}
+        <img src="/certifications/startupindia.png" alt="Startup India" className="h-24 w-auto object-contain" />
+        <img src="/certifications/msme.jpg" alt="MSME" className="h-24 w-auto object-contain" />
+        <img src="/certifications/gst.jfif" alt="GST" className="h-24 w-auto object-contain" />
+        <img src="/certifications/iso.png" alt="ISO" className="h-24 w-auto object-contain" />
+        <img src="/certifications/IMPORT.jpg" alt="IEC" className="h-24 w-auto object-contain" />
+        <img src="/certifications/gem.png" alt="GeM" className="h-24 w-auto object-contain" />
+
+      </div>
+    </div>
+
+  </div>
+</section>
       {/* About Company */}
 <section className="mx-auto max-w-7xl px-6 py-24">
   <div className="grid gap-12 lg:grid-cols-2 items-center">
@@ -256,28 +296,6 @@ export default function Home() {
 
   </div>
 </section>
-
-      {/* Stats */}
-      <section className="mx-auto max-w-7xl px-6 pb-20">
-        <div className="grid gap-6 md:grid-cols-4">
-          {[
-            ["5+", "Years Experience"],
-            ["20+", "Projects Delivered"],
-            ["100%", "Client Commitment"],
-            ["24/7", "Technical Support"],
-          ].map(([value, label]) => (
-            <div
-              key={label}
-              className="rounded-2xl border border-white/10 bg-white/5 p-8 text-center"
-            >
-              <h3 className="text-4xl font-bold text-[#D4AF37]">
-                {value}
-              </h3>
-              <p className="mt-2 text-gray-400">{label}</p>
-            </div>
-          ))}
-        </div>
-      </section>
 
       {/* Services */}
       {/* Services */}
@@ -449,42 +467,7 @@ export default function Home() {
 
   </div>
 </section>
-      {/* Why Choose Us */}
-      <section className="mx-auto max-w-7xl px-6 py-24">
-        <div className="mb-16 text-center">
-          <h2 className="text-5xl font-bold">
-            Why Choose{" "}
-            <span className="text-[#D4AF37]">
-              Do IT Consultancy
-            </span>
-          </h2>
-
-          <p className="mt-4 text-gray-400">
-            Delivering innovation, quality and scalable digital solutions.
-          </p>
-        </div>
-
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {[
-            "Enterprise Development",
-            "Cloud Expertise",
-            "AI & Automation",
-            "Cyber Security",
-            "Agile Delivery",
-            "Dedicated Support",
-          ].map((item) => (
-            <div
-              key={item}
-              className="rounded-3xl border border-white/10 bg-white/5 p-8"
-            >
-              <h3 className="text-2xl font-bold text-[#D4AF37]">
-                {item}
-              </h3>
-            </div>
-          ))}
-        </div>
-      </section>
-   {/* Testimonials */}
+       {/* Testimonials */}
 <section className="mx-auto max-w-7xl px-6 py-24">
   <div className="mb-16 text-center">
     <h2 className="text-5xl font-bold">
@@ -531,43 +514,7 @@ export default function Home() {
     ))}
   </div>
 </section>
-  {/* Certifications */}
-<section className="mx-auto max-w-7xl px-6 py-24">
-  <div className="mb-16 text-center">
-    <h2 className="text-5xl font-bold">
-      Trust & <span className="text-[#D4AF37]">Certifications</span>
-    </h2>
 
-    <p className="mt-4 text-gray-400">
-      Registered, recognized and trusted technology partner.
-    </p>
-  </div>
-
-  <div className="grid gap-6 md:grid-cols-3 lg:grid-cols-6">
-
-    {[
-      "MSME",
-      "GST",
-      "GeM",
-      "Startup India",
-      "ISO",
-      "IEC",
-    ].map((item) => (
-      <div
-        key={item}
-        className="rounded-3xl border border-white/10 bg-white/5 p-8 text-center transition-all duration-300 hover:border-[#D4AF37] hover:-translate-y-2"
-      >
-        <div className="mb-4 text-4xl text-[#D4AF37]">
-          ✓
-        </div>
-
-        <h3 className="font-bold">
-          {item}
-        </h3>
-      </div>
-    ))}
-  </div>
-</section>
      <section className="mx-auto max-w-7xl px-6 py-24">
         <div className="rounded-3xl border border-white/10 bg-white/5 p-12 text-center">
           <h2 className="text-5xl font-bold">
@@ -607,7 +554,7 @@ export default function Home() {
       </h3>
 
       <div className="mt-8 space-y-5 text-gray-300">
-        <p>📞 +91 XXXXXXXXXX</p>
+        <p>📞 +91 8770283156</p>
         <p>📧 info@doitconsultancy.in</p>
         <p>🌐 www.doitconsultancy.in</p>
         <p>📍 Sagar, Madhya Pradesh, India</p>
@@ -653,50 +600,7 @@ export default function Home() {
 </section>
 
       {/* Footer */}
-<footer className="border-t border-white/10 py-10">
-  <div className="mx-auto max-w-7xl px-6">
-
-    <div className="grid gap-10 md:grid-cols-3">
-
-      <div>
-        <h3 className="text-2xl font-bold text-[#D4AF37]">
-          Do IT Consultancy
-        </h3>
-
-        <p className="mt-4 text-gray-400">
-          Empowering Businesses Through Technology.
-        </p>
-      </div>
-
-      <div>
-        <h4 className="mb-4 font-semibold">Services</h4>
-
-        <ul className="space-y-2 text-gray-400">
-          <li>Software Development</li>
-          <li>Web Development</li>
-          <li>Cloud Services</li>
-          <li>Cyber Security</li>
-        </ul>
-      </div>
-
-      <div>
-        <h4 className="mb-4 font-semibold">Contact</h4>
-
-        <ul className="space-y-2 text-gray-400">
-          <li>📧 info@doitconsultancy.in</li>
-          <li>📞 +91 8770283156</li>
-          <li>📍 Sagar, Madhya Pradesh</li>
-        </ul>
-      </div>
-
-    </div>
-
-    <div className="mt-10 border-t border-white/10 pt-6 text-center text-gray-500">
-      © 2026 Do IT Consultancy. All Rights Reserved.
-    </div>
-
-  </div>
-</footer>
+     <Footer />
      </main>
   );
 }

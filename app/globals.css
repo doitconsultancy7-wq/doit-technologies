@@ -28,3 +28,41 @@ body {
   --gold: #D4AF37;
   --gold-light: #F5C86B;
 }
+@keyframes marquee {
+  0% {
+    transform: translateX(-50%);
+  }
+
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.animate-marquee {
+  width: max-content;
+  animation: marquee 20s linear infinite;
+}
+@keyframes marquee {
+  0% {
+    transform: translateX(-50%);
+  }
+
+  100% {
+    transform: translateX(0%);
+  }
+}
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 25s linear infinite;
+}
