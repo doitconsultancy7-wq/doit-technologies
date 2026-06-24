@@ -18,7 +18,7 @@ export default function Home() {
     <main className="min-h-screen bg-[#050505] text-white">
       <Navbar />
       {/* Hero */}
-      <section className="relative overflow-hidden min-h-[90vh] flex items-center">
+      <section className="relative overflow-hidden min-h-screen lg:min-h-[90vh] flex items-center py-10 lg:py-0">
 
   <div className="absolute inset-0">
     <NetworkBackground />
@@ -36,10 +36,8 @@ export default function Home() {
     className="absolute right-0 top-20 h-96 w-96 rounded-full bg-yellow-400/10 blur-3xl"
   />
 
-  <div className="relative z-10 mx-auto max-w-7xl px-6 w-full">
-
-    <div className="grid lg:grid-cols-2 gap-20 items-center">
-
+  <div className="relative z-10 mx-auto max-w-7xl px-4 md:px-6 w-full">
+    <div className="grid lg:grid-cols-2 gap-10 lg:gap-20 items-center">
       {/* LEFT SIDE */}
       <div>
 
@@ -51,7 +49,7 @@ export default function Home() {
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
-          className="text-5xl md:text-7xl font-extrabold leading-[1.05]"
+          className="text-4xl sm:text-5xl md:text-7xl font-extrabold leading-tight"
         >
           Transforming
 
@@ -75,20 +73,20 @@ export default function Home() {
         </p>
         
         {/* STATS */}
-        <div className="mt-12 grid grid-cols-3 gap-4">
+        <div className="mt-12 grid grid-cols-3 gap-2 md:gap-4">
 
           <div className="rounded-2xl border border-[#D4AF37]/20 bg-white/5 p-5 backdrop-blur">
-            <h3 className="text-4xl font-bold text-[#D4AF37]">20+</h3>
+            <h3 className="text-2xl md:text-4xl font-bold text-[#D4AF37]">20+</h3>
             <p className="mt-2 text-gray-300">Projects</p>
           </div>
 
           <div className="rounded-2xl border border-[#D4AF37]/20 bg-white/5 p-5 backdrop-blur">
-            <h3 className="text-4xl font-bold text-[#D4AF37]">10+</h3>
+            <h3 className="text-2xl md:text-4xl font-bold text-[#D4AF37]">10+</h3>
             <p className="mt-2 text-gray-300">Clients</p>
           </div>
 
           <div className="rounded-2xl border border-[#D4AF37]/20 bg-white/5 p-5 backdrop-blur">
-            <h3 className="text-4xl font-bold text-[#D4AF37]">24/7</h3>
+            <h3 className="text-2xl md:text-4xl font-bold text-[#D4AF37]">24/7</h3>
             <p className="mt-2 text-gray-300">Support</p>
           </div>
 
@@ -110,7 +108,7 @@ export default function Home() {
       </div>
 
       {/* RIGHT SIDE */}
-      <div className="relative flex items-center justify-center min-h-[600px]">
+      <div className="order-first lg:order-last relative flex items-center justify-center min-h-[320px] md:min-h-[600px]">
 
         <motion.div
           animate={{ rotate: 360 }}
@@ -119,7 +117,7 @@ export default function Home() {
             repeat: Infinity,
             ease: "linear",
           }}
-          className="absolute h-[500px] w-[500px] rounded-full border-2 border-[#D4AF37]/40 shadow-[0_0_80px_rgba(212,175,55,0.35)]"
+          className="absolute h-[260px] w-[260px] md:h-[500px] md:w-[500px] rounded-full border-2 border-[#D4AF37]/40 shadow-[0_0_80px_rgba(212,175,55,0.35)]"
         />
 
         <motion.div
@@ -137,7 +135,7 @@ export default function Home() {
         <motion.img
           src="/logo.png"
           alt="Do IT Consultancy"
-          className="relative h-80 w-80 rounded-full object-cover border-4 border-[#D4AF37]/30"
+          className="relative h-40 w-40 md:h-80 md:w-80 rounded-full object-cover border-4 border-[#D4AF37]/30"
           animate={{
             y: [0, -12, 0],
             scale: [1, 1.03, 1],
