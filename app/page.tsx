@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
+import NetworkBackground from "@/components/NetworkBackground";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import {
@@ -17,100 +18,187 @@ export default function Home() {
     <main className="min-h-screen bg-[#050505] text-white">
       <Navbar />
       {/* Hero */}
-      <section className="relative overflow-hidden">
-        <motion.div
-  animate={{
-    x: [0, 40, 0],
-    y: [0, 20, 0],
-  }}
-  transition={{
-    duration: 8,
-    repeat: Infinity,
-  }}
-  className="absolute left-0 top-0 h-96 w-96 rounded-full bg-yellow-500/10 blur-3xl"
-/>
-        <motion.div
-  animate={{
-    x: [0, -40, 0],
-    y: [0, -20, 0],
-  }}
-  transition={{
-    duration: 10,
-    repeat: Infinity,
-  }}
-  className="absolute right-0 top-20 h-96 w-96 rounded-full bg-yellow-400/10 blur-3xl"
-/>
+      <section className="relative overflow-hidden min-h-[90vh] flex items-center">
 
-        <div className="mx-auto max-w-7xl px-6 py-20">
-          <div className="grid items-center gap-12 lg:grid-cols-2">
-            <div>
-              <p className="mb-4 uppercase tracking-[0.3em] text-[#D4AF37]">
-                SOFTWARE • CLOUD • AI • CONSULTING
-              </p>
+  <div className="absolute inset-0">
+    <NetworkBackground />
+  </div>
 
-              <motion.h1
-  initial={{ opacity: 0, y: 50 }}
-  animate={{ opacity: 1, y: 0 }}
-  transition={{ duration: 1 }}
-  className="text-5xl font-extrabold leading-tight md:text-7xl"
->
-                Building
-                <span className="block bg-gradient-to-r from-[#D4AF37] via-[#F5C86B] to-[#FFD700] bg-clip-text text-transparent">
-                  Digital Excellence
-                </span>
-              </motion.h1>
+  <motion.div
+    animate={{ x: [0, 40, 0], y: [0, 20, 0] }}
+    transition={{ duration: 8, repeat: Infinity }}
+    className="absolute left-0 top-0 h-96 w-96 rounded-full bg-yellow-500/10 blur-3xl"
+  />
 
-              <p className="mt-8 text-lg text-gray-400">
-                We design, develop and scale world-class software solutions,
-                cloud infrastructure and AI-powered products for startups,
-                enterprises and government organizations.
-              </p>
+  <motion.div
+    animate={{ x: [0, -40, 0], y: [0, -20, 0] }}
+    transition={{ duration: 10, repeat: Infinity }}
+    className="absolute right-0 top-20 h-96 w-96 rounded-full bg-yellow-400/10 blur-3xl"
+  />
 
-              <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-                <button className="rounded-xl bg-[#D4AF37] px-8 py-4 font-semibold text-black hover:bg-[#F5C86B]">
-                  Start Project
-                </button>
+  <div className="relative z-10 mx-auto max-w-7xl px-6 w-full">
 
-                <button className="rounded-xl border border-white/20 px-8 py-4 font-semibold hover:bg-white/10">
-                  View Services
-                </button>
-              </div>
-            </div>
+    <div className="grid lg:grid-cols-2 gap-20 items-center">
 
-            <div className="relative">
-              <div className="rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur">
-                <h3 className="mb-6 text-xl font-semibold">
-                  Business Dashboard
-                </h3>
+      {/* LEFT SIDE */}
+      <div>
 
-                <div className="space-y-4">
-                  <div className="rounded-xl bg-white/5 p-4">
-                    <p className="text-gray-400">Project Success Rate</p>
-                    <h4 className="text-3xl font-bold text-[#D4AF37]">
-                      98%
-                    </h4>
-                  </div>
+        <p className="mb-8 uppercase tracking-[0.3em] text-[#D4AF37]">
+          SOFTWARE • CLOUD • AI • CONSULTING
+        </p>
 
-                  <div className="rounded-xl bg-white/5 p-4">
-                    <p className="text-gray-400">Client Satisfaction</p>
-                    <h4 className="text-3xl font-bold text-[#F5C86B]">
-                      100%
-                    </h4>
-                  </div>
+        <motion.h1
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          className="text-5xl md:text-7xl font-extrabold leading-[1.05]"
+        >
+          Transforming
 
-                  <div className="rounded-xl bg-white/5 p-4">
-                    <p className="text-gray-400">Support Availability</p>
-                    <h4 className="text-3xl font-bold text-yellow-300">
-                      24/7
-                    </h4>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <span className="block text-[#D4AF37]">
+            Businesses
+          </span>
+
+          <span className="block text-white">
+            Through AI &
+          </span>
+
+          <span className="block text-[#D4AF37]">
+            Technology
+          </span>
+        </motion.h1>
+
+        <p className="mt-8 text-lg text-gray-400 max-w-2xl">
+          Delivering AI-powered software, cloud infrastructure,
+          BPO services and digital transformation solutions
+          for startups, enterprises and government organizations.
+        </p>
+        
+        {/* STATS */}
+        <div className="mt-12 grid grid-cols-3 gap-4">
+
+          <div className="rounded-2xl border border-[#D4AF37]/20 bg-white/5 p-5 backdrop-blur">
+            <h3 className="text-4xl font-bold text-[#D4AF37]">20+</h3>
+            <p className="mt-2 text-gray-300">Projects</p>
           </div>
+
+          <div className="rounded-2xl border border-[#D4AF37]/20 bg-white/5 p-5 backdrop-blur">
+            <h3 className="text-4xl font-bold text-[#D4AF37]">10+</h3>
+            <p className="mt-2 text-gray-300">Clients</p>
+          </div>
+
+          <div className="rounded-2xl border border-[#D4AF37]/20 bg-white/5 p-5 backdrop-blur">
+            <h3 className="text-4xl font-bold text-[#D4AF37]">24/7</h3>
+            <p className="mt-2 text-gray-300">Support</p>
+          </div>
+
         </div>
-      </section>
+
+        {/* BUTTONS */}
+        <div className="mt-10 flex flex-wrap gap-5">
+
+          <button className="rounded-xl bg-[#D4AF37] px-8 py-4 font-semibold text-black hover:bg-[#F5C86B]">
+            Start Project
+          </button>
+
+          <button className="rounded-xl border border-white/20 px-8 py-4 font-semibold hover:bg-white/10">
+            View Services
+          </button>
+
+        </div>
+
+      </div>
+
+      {/* RIGHT SIDE */}
+      <div className="relative flex items-center justify-center min-h-[600px]">
+
+        <motion.div
+          animate={{ rotate: 360 }}
+          transition={{
+            duration: 25,
+            repeat: Infinity,
+            ease: "linear",
+          }}
+          className="absolute h-[500px] w-[500px] rounded-full border-2 border-[#D4AF37]/40 shadow-[0_0_80px_rgba(212,175,55,0.35)]"
+        />
+
+        <motion.div
+          animate={{ rotate: -360 }}
+          transition={{
+            duration: 18,
+            repeat: Infinity,
+            ease: "linear",
+          }}
+          className="absolute h-[380px] w-[380px] rounded-full border border-[#D4AF37]/40"
+        />
+
+        <div className="absolute h-[300px] w-[300px] rounded-full bg-[#D4AF37]/20 blur-[90px]" />
+
+        <motion.img
+          src="/logo.png"
+          alt="Do IT Consultancy"
+          className="relative h-80 w-80 rounded-full object-cover border-4 border-[#D4AF37]/30"
+          animate={{
+            y: [0, -12, 0],
+            scale: [1, 1.03, 1],
+          }}
+          transition={{
+            duration: 5,
+            repeat: Infinity,
+          }}
+        />
+
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 w-full">
+  <p className="text-[#D4AF37] text-center text-sm font-semibold tracking-[0.35em]">
+    AI • CLOUD • BPO • CYBER SECURITY
+  </p>
+</div>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+       
+     <section className="py-20 overflow-hidden">
+  
+  <div className="max-w-7xl mx-auto px-6">
+  <div className="text-center mb-12">
+      <h2 className="text-5xl font-bold">
+        Trusted & <span className="text-[#D4AF37]">Certified</span>
+      </h2>
+
+      <p className="mt-4 text-gray-400">
+        Recognized by Government of India and Industry Certification Bodies
+      </p>
+    </div>
+
+    <div className="relative overflow-hidden">
+      <div className="flex gap-16 animate-marquee whitespace-nowrap items-center">
+
+        <img src="/certifications/startupindia.png" alt="Startup India" className="h-24 w-auto object-contain" />
+        <img src="/certifications/msme.jpg" alt="MSME" className="h-24 w-auto object-contain" />
+        <img src="/certifications/gst.jfif" alt="GST" className="h-24 w-auto object-contain" />
+        <img src="/certifications/iso.png" alt="ISO" className="h-24 w-auto object-contain" />
+        <img src="/certifications/IMPORT.jpg" alt="IEC" className="h-24 w-auto object-contain" />
+        <img src="/certifications/gem.png" alt="GeM" className="h-24 w-auto object-contain" />
+
+        {/* Duplicate for infinite loop */}
+        <img src="/certifications/startupindia.png" alt="Startup India" className="h-24 w-auto object-contain" />
+        <img src="/certifications/msme.jpg" alt="MSME" className="h-24 w-auto object-contain" />
+        <img src="/certifications/gst.jfif" alt="GST" className="h-24 w-auto object-contain" />
+        <img src="/certifications/iso.png" alt="ISO" className="h-24 w-auto object-contain" />
+        <img src="/certifications/IMPORT.jpg" alt="IEC" className="h-24 w-auto object-contain" />
+        <img src="/certifications/gem.png" alt="GeM" className="h-24 w-auto object-contain" />
+
+      </div>
+    </div>
+
+  </div>
+</section>
      
+
         {/* Trust Section */}
      <section className="py-24 bg-[#080808]">
   <div className="max-w-7xl mx-auto px-6">
@@ -153,151 +241,8 @@ export default function Home() {
 </section>
       
       {/* Our Process */}
-<section className="mx-auto max-w-7xl px-6 py-24">
-  <div className="mb-16 text-center">
-    <h2 className="text-5xl font-bold">
-      Our <span className="text-[#D4AF37]">Process</span>
-    </h2>
-
-    <p className="mt-4 text-gray-400">
-      A proven approach to deliver successful technology solutions.
-    </p>
-  </div>
-
-  <div className="grid gap-8 md:grid-cols-4">
-
-    {[
-      {
-        no: "01",
-        title: "Discovery",
-        desc: "Understand business goals and requirements.",
-      },
-      {
-        no: "02",
-        title: "Planning",
-        desc: "Create roadmap, architecture and strategy.",
-      },
-      {
-        no: "03",
-        title: "Development",
-        desc: "Build scalable and secure digital solutions.",
-      },
-      {
-        no: "04",
-        title: "Support",
-        desc: "Continuous monitoring and maintenance.",
-      },
-    ].map((step) => (
-      <div
-        key={step.no}
-        className="rounded-3xl border border-white/10 bg-white/5 p-8 hover:border-[#D4AF37] transition-all"
-      >
-        <h3 className="text-5xl font-bold text-[#D4AF37]">
-          {step.no}
-        </h3>
-
-        <h4 className="mt-4 text-2xl font-semibold">
-          {step.title}
-        </h4>
-
-        <p className="mt-3 text-gray-400">
-          {step.desc}
-        </p>
-      </div>
-    ))}
-  </div>
-</section>
 {/* Trust & Certifications */}
-<section className="py-20 overflow-hidden">
-  <div className="max-w-7xl mx-auto px-6">
-
-    <div className="text-center mb-12">
-      <h2 className="text-5xl font-bold">
-        Trusted & <span className="text-[#D4AF37]">Certified</span>
-      </h2>
-
-      <p className="mt-4 text-gray-400">
-        Recognized by Government of India and Industry Certification Bodies
-      </p>
-    </div>
-
-    <div className="relative overflow-hidden">
-      <div className="flex gap-16 animate-marquee whitespace-nowrap items-center">
-
-        <img src="/certifications/startupindia.png" alt="Startup India" className="h-24 w-auto object-contain" />
-        <img src="/certifications/msme.jpg" alt="MSME" className="h-24 w-auto object-contain" />
-        <img src="/certifications/gst.jfif" alt="GST" className="h-24 w-auto object-contain" />
-        <img src="/certifications/iso.png" alt="ISO" className="h-24 w-auto object-contain" />
-        <img src="/certifications/IMPORT.jpg" alt="IEC" className="h-24 w-auto object-contain" />
-        <img src="/certifications/gem.png" alt="GeM" className="h-24 w-auto object-contain" />
-
-        {/* Duplicate for infinite loop */}
-        <img src="/certifications/startupindia.png" alt="Startup India" className="h-24 w-auto object-contain" />
-        <img src="/certifications/msme.jpg" alt="MSME" className="h-24 w-auto object-contain" />
-        <img src="/certifications/gst.jfif" alt="GST" className="h-24 w-auto object-contain" />
-        <img src="/certifications/iso.png" alt="ISO" className="h-24 w-auto object-contain" />
-        <img src="/certifications/IMPORT.jpg" alt="IEC" className="h-24 w-auto object-contain" />
-        <img src="/certifications/gem.png" alt="GeM" className="h-24 w-auto object-contain" />
-
-      </div>
-    </div>
-
-  </div>
-</section>
-      {/* About Company */}
-<section className="mx-auto max-w-7xl px-6 py-24">
-  <div className="grid gap-12 lg:grid-cols-2 items-center">
-
-    <div>
-      <h2 className="text-5xl font-bold">
-        About <span className="text-[#D4AF37]">Do IT Consultancy</span>
-      </h2>
-
-      <p className="mt-6 text-gray-400 text-lg leading-8">
-        Do IT Consultancy is a technology-driven company delivering
-        software development, cloud solutions, AI automation,
-        cyber security and IT consulting services.
-
-        We help startups, enterprises and government organizations
-        transform their ideas into scalable digital products.
-      </p>
-
-      <div className="mt-8 flex gap-8">
-        <div>
-          <h3 className="text-4xl font-bold text-[#D4AF37]">5+</h3>
-          <p className="text-gray-400">Years Experience</p>
-        </div>
-
-        <div>
-          <h3 className="text-4xl font-bold text-[#D4AF37]">20+</h3>
-          <p className="text-gray-400">Projects</p>
-        </div>
-
-        <div>
-          <h3 className="text-4xl font-bold text-[#D4AF37]">100%</h3>
-          <p className="text-gray-400">Commitment</p>
-        </div>
-      </div>
-    </div>
-
-    <div className="rounded-3xl border border-white/10 bg-white/5 p-10">
-      <h3 className="text-3xl font-bold text-[#D4AF37] mb-6">
-        Why Businesses Choose Us
-      </h3>
-
-      <ul className="space-y-4 text-gray-300">
-        <li>✓ Custom Software Development</li>
-        <li>✓ Cloud & DevOps Solutions</li>
-        <li>✓ AI & Automation Services</li>
-        <li>✓ Cyber Security Expertise</li>
-        <li>✓ 24/7 Technical Support</li>
-      </ul>
-    </div>
-
-  </div>
-</section>
-
-      {/* Services */}
+ {/* About Company */}
       {/* Services */}
 <section className="mx-auto max-w-7xl px-6 py-24">
   <div className="mb-16 text-center">
@@ -375,146 +320,8 @@ export default function Home() {
   </div>
 </section>
       {/* Technologies */}
-      <section className="mx-auto max-w-7xl px-6 py-24">
-        <div className="mb-16 text-center">
-          <h2 className="text-5xl font-bold">
-            Trusted <span className="text-[#D4AF37]">Technologies</span>
-          </h2>
-
-          <p className="mt-4 text-gray-400">
-            We build modern, scalable and enterprise-grade solutions.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-2 gap-6 md:grid-cols-4 lg:grid-cols-6">
-          {[
-            "Next.js",
-            "React",
-            "TypeScript",
-            "Node.js",
-            "AWS",
-            "Azure",
-            "Docker",
-            "Kubernetes",
-            "MongoDB",
-            "PostgreSQL",
-            "Spring Boot",
-            "Python",
-          ].map((tech) => (
-            <div
-              key={tech}
-              className="rounded-2xl border border-white/10 bg-white/5 p-6 text-center hover:border-[#D4AF37]"
-            >
-              <h3 className="font-semibold">{tech}</h3>
-            </div>
-          ))}
-        </div>
-      </section>
-          
           {/* Portfolio*/}
-      <section className="mx-auto max-w-7xl px-6 py-24">
-  <div className="mb-16 text-center">
-    <h2 className="text-5xl font-bold">
-      Our <span className="text-[#D4AF37]">Portfolio</span>
-    </h2>
-
-    <p className="mt-4 text-gray-400">
-      Delivering impactful solutions across multiple industries.
-    </p>
-  </div>
-
-  <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-
-    {[
-      {
-        title: "Government Training Programs",
-        desc: "Delivered technical and IT training programs for government and institutional organizations."
-      },
-      {
-        title: "Software Development Projects",
-        desc: "Custom software applications, business portals and enterprise solutions."
-      },
-      {
-        title: "Website Development",
-        desc: "Professional websites, business portals and e-commerce platforms."
-      },
-      {
-        title: "Cloud Infrastructure",
-        desc: "AWS and Azure deployment, migration and cloud management services."
-      },
-      {
-        title: "BPO & Support Operations",
-        desc: "Customer support, technical support and business process outsourcing."
-      },
-      {
-        title: "AI & Automation Solutions",
-        desc: "AI-powered tools, automation workflows and intelligent business solutions."
-      }
-    ].map((project) => (
-      <div
-        key={project.title}
-        className="rounded-3xl border border-white/10 bg-gradient-to-br from-white/5 to-black p-8 transition-all duration-300 hover:-translate-y-2 hover:border-[#D4AF37] hover:shadow-[0_0_30px_rgba(212,175,55,0.20)]"
-      >
-        <h3 className="text-2xl font-bold text-[#D4AF37] transition-all duration-300">
-          {project.title}
-        </h3>
-
-        <p className="mt-4 text-gray-400">
-          {project.desc}
-        </p>
-      </div>
-    ))}
-
-  </div>
-</section>
-       {/* Testimonials */}
-<section className="mx-auto max-w-7xl px-6 py-24">
-  <div className="mb-16 text-center">
-    <h2 className="text-5xl font-bold">
-      Client <span className="text-[#D4AF37]">Testimonials</span>
-    </h2>
-
-    <p className="mt-4 text-gray-400">
-      What our clients say about our services.
-    </p>
-  </div>
-
-  <div className="grid gap-8 md:grid-cols-3">
-
-    {[
-      {
-        name: "Government Training Client",
-        text: "Professional training delivery with excellent technical expertise."
-      },
-      {
-        name: "Business Client",
-        text: "The team delivered our project on time with outstanding quality."
-      },
-      {
-        name: "Technology Partner",
-        text: "Reliable support, strong communication and scalable solutions."
-      },
-    ].map((item) => (
-      <div
-        key={item.name}
-        className="rounded-3xl border border-white/10 bg-white/5 p-8 hover:border-[#D4AF37] transition-all"
-      >
-        <div className="mb-4 text-[#D4AF37] text-2xl">
-          ★★★★★
-        </div>
-
-        <p className="text-gray-300">
-          {item.text}
-        </p>
-
-        <h4 className="mt-6 font-bold text-[#D4AF37]">
-          {item.name}
-        </h4>
-      </div>
-    ))}
-  </div>
-</section>
-
+        {/* Testimonials */}
      <section className="mx-auto max-w-7xl px-6 py-24">
         <div className="rounded-3xl border border-white/10 bg-white/5 p-12 text-center">
           <h2 className="text-5xl font-bold">
@@ -534,71 +341,6 @@ export default function Home() {
         </div>
       </section>
 {/* Contact Section */}
-<section className="mx-auto max-w-7xl px-6 py-24">
-  <div className="mb-16 text-center">
-    <h2 className="text-5xl font-bold">
-      Get In <span className="text-[#D4AF37]">Touch</span>
-    </h2>
-
-    <p className="mt-4 text-gray-400">
-      Lets discuss your project and business requirements.
-    </p>
-  </div>
-
-  <div className="grid gap-10 lg:grid-cols-2">
-
-    {/* Contact Info */}
-    <div className="rounded-3xl border border-white/10 bg-white/5 p-8">
-      <h3 className="text-3xl font-bold text-[#D4AF37]">
-        Contact Information
-      </h3>
-
-      <div className="mt-8 space-y-5 text-gray-300">
-        <p>📞 +91 8770283156</p>
-        <p>📧 info@doitconsultancy.in</p>
-        <p>🌐 www.doitconsultancy.in</p>
-        <p>📍 Sagar, Madhya Pradesh, India</p>
-      </div>
-    </div>
-
-    {/* Form */}
-    <div className="rounded-3xl border border-white/10 bg-white/5 p-8">
-      <form className="space-y-4">
-        <input
-          type="text"
-          placeholder="Full Name"
-          className="w-full rounded-xl border border-white/10 bg-black p-4"
-        />
-
-        <input
-          type="email"
-          placeholder="Email Address"
-          className="w-full rounded-xl border border-white/10 bg-black p-4"
-        />
-
-        <input
-          type="text"
-          placeholder="Phone Number"
-          className="w-full rounded-xl border border-white/10 bg-black p-4"
-        />
-
-        <textarea
-          rows={5}
-          placeholder="Your Message"
-          className="w-full rounded-xl border border-white/10 bg-black p-4"
-        />
-
-        <button
-          className="w-full rounded-xl bg-[#D4AF37] py-4 font-bold text-black"
-        >
-          Send Inquiry
-        </button>
-      </form>
-    </div>
-
-  </div>
-</section>
-
       {/* Footer */}
      <Footer />
      </main>
